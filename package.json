@@ -1,0 +1,22 @@
+{
+  "name": "react_space",
+  "version": "1.0.0",
+  "description": "react nasa app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisPfaff/react_space.git"
+  },
+  "author": "chris pfaff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisPfaff/react_space/issues"
+  },
+  "homepage": "https://github.com/chrisPfaff/react_space#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
