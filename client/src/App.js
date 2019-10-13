@@ -8,7 +8,7 @@ function App() {
       <header className="App_header">
         <img className="App_logo" src="logo.png" alt="main header image" />
       </header>
-      <Home />
+      <Home data={"data"} />
     </div>
   );
 }
