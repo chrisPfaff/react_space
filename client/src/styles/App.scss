@@ -6,9 +6,11 @@
   height: 100vh;
 
   &_header {
+    display: flex;
     border-bottom: 1px solid $text-color;
   }
   &_logo {
-    width: 200px;
+    padding-left: 20px;
+    width: 100px;
   }
 }
