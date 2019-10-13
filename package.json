@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/chrisPfaff/react_space#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "nodemon": "^1.19.3"
   },
