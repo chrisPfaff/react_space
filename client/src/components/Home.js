@@ -3,31 +3,33 @@ import axios from "axios";
 
 function Home(props) {
   const [image, getImage] = useState(null);
+  const [explanation, getExplanation] = useState(null);
 
-  console.log(image);
-
-  const url =
-    "https://api.nasa.gov/planetary/apod?api_key=raP0qIkThJJqXBjcPypF4LNUhEnHUndMyyeYczup";
-
-  const fetchData = data => {
-    getImage(data);
+  const fetchData = (img, description) => {
+    getImage(img);
+    getExplanation(description);
   };
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then(function(response) {
-        fetchData(response.data.url);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    async function getData() {
+      await axios
+        .get("http://localhost:8080/getimage")
+        .then(function(response) {
+          console.log(response);
+          fetchData(response.data.url, response.data.explanation);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+    getData();
   });
 
   return (
     <div className="Home">
       <div className="Home_body">
         <img src={image} alt="nasa space" />
+        <p>{explanation}</p>
       </div>
     </div>
   );
