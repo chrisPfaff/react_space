@@ -1,0 +1,14 @@
+@import "src/styles/variables.scss";
+
+.App {
+  text-align: center;
+  background-color: $accent-color;
+  height: 100vh;
+
+  &_header {
+    border-bottom: 1px solid $text-color;
+  }
+  &_logo {
+    width: 200px;
+  }
+}
