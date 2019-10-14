@@ -31,6 +31,7 @@ function Home(props) {
       <div className="Home_body">
         <img className="Home_image" src={image} alt="nasa space" />
       </div>
+      <h2 className="Home_heading">Description</h2>
       <p className="Home_explanation">{explanation}</p>
     </div>
   );
