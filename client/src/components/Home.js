@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../styles/Home.scss";
 
 function Home(props) {
   const [image, getImage] = useState(null);
@@ -28,9 +29,9 @@ function Home(props) {
   return (
     <div className="Home">
       <div className="Home_body">
-        <img src={image} alt="nasa space" />
-        <p>{explanation}</p>
+        <img className="Home_image" src={image} alt="nasa space" />
       </div>
+      <p className="Home_explanation">{explanation}</p>
     </div>
   );
 }
