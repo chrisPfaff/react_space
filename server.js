@@ -27,6 +27,16 @@ app.get("/getimage", (req, res) => {
     });
 });
 
+app.get("/getEpic", (req, res) => {
+  const apiKey = process.env.API_KEY;
+
+  axios
+    .get(`https://api.nasa.gov/EPIC/api/natural/images?api_key=${apiKey}`)
+    .then(response => {
+      res.send(response.data);
+    });
+});
+
 app.listen(process.env.PORT || port, () => {
   console.log(`app is listening on port ${port}`);
 });
