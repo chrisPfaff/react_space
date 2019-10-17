@@ -1,6 +1,8 @@
 import React from "react";
 import Home from "./components/Home.js";
 import Epic from "./components/Epic.js";
+import Notfound from "./components/Notfound.js";
+
 import "./styles/App.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -23,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/epic">
             <Epic />
+          </Route>
+          <Route path="*">
+            <Notfound />
           </Route>
         </Switch>
       </div>

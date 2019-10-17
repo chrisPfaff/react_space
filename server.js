@@ -27,11 +27,13 @@ app.get("/getimage", (req, res) => {
     });
 });
 
-app.get("/getEpic", (req, res) => {
+app.get("/getepic", (req, res) => {
   const apiKey = process.env.API_KEY;
 
   axios
-    .get(`https://api.nasa.gov/EPIC/api/natural/images?api_key=${apiKey}`)
+    .get(
+      `https://api.nasa.gov/EPIC/api/natural/date/08-10-2017?api_key=${apiKey}`
+    )
     .then(response => {
       res.send(response.data);
     });
