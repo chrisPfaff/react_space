@@ -16,7 +16,7 @@ function NotFound(props) {
       <p className="notFound_explanation">Its Lonely Out Here</p>
       <button className="notFound_button">
         <Link className="notFound_button_text" to="/">
-          Home
+          <li>Home</li>
         </Link>
       </button>
     </div>
