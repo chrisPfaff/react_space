@@ -6,13 +6,28 @@ const Darkmode = props => {
 
   const clickFunction = e => {
     let body = document.querySelector("body");
-    console.log(body);
+    let appHeader = document.querySelectorAll("a");
+    let darkModeText = document.getElementsByClassName(
+      "DarkmodeContainer_name"
+    );
+    let header = document.getElementsByClassName("App_header");
+
     if (dark === false) {
       setDark(true);
+      appHeader.forEach(item => {
+        item.classList.add("dark");
+      });
       body.classList.add("dark");
+      darkModeText[0].classList.add("dark");
+      header[0].classList.add("dark");
     } else {
       setDark(false);
+      appHeader.forEach(item => {
+        item.classList.remove("dark");
+      });
       body.classList.remove("dark");
+      darkModeText[0].classList.remove("dark");
+      header[0].classList.remove("dark");
     }
   };
 
