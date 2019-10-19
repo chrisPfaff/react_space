@@ -7,7 +7,11 @@ code {
 
 .dark {
   background-color: $dark-mode;
-  color: $white;
+  color: $white !important;
+}
+
+.App_header.dark {
+  border-bottom: 3px solid $white !important;
 }
 // @media (prefers-color-scheme: dark) {
 //   body {
