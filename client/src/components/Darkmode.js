@@ -11,6 +11,7 @@ const Darkmode = props => {
       "DarkmodeContainer_name"
     );
     let header = document.getElementsByClassName("App_header");
+    let logo = document.getElementsByClassName("App_logo_dark")[0];
 
     if (dark === false) {
       setDark(true);
@@ -20,6 +21,7 @@ const Darkmode = props => {
       body.classList.add("dark");
       darkModeText[0].classList.add("dark");
       header[0].classList.add("dark");
+      logo.style.zIndex = 2;
     } else {
       setDark(false);
       appHeader.forEach(item => {
@@ -28,6 +30,7 @@ const Darkmode = props => {
       body.classList.remove("dark");
       darkModeText[0].classList.remove("dark");
       header[0].classList.remove("dark");
+      logo.style.zIndex = 0;
     }
   };
 
