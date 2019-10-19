@@ -4,3 +4,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.dark {
+  background-color: $dark-mode;
+  color: $white;
+}
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     background-color: $dark-mode;
+//     color: $white;
+//   }
+//   .App_header {
+//     border-bottom: 2px solid $white !important;
+//   }
+// }
+// @media (prefers-color-scheme: light) {
+//   body {
+//     background-color: $white;
+//     color: $text-color;
+//   }
+// }
