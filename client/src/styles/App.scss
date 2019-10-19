@@ -20,10 +20,19 @@
     grid-area: 1 / 3 / 2 / 6;
     padding-top: 70px;
   }
-  &_logo {
+  &_logo_light {
     grid-area: 1 / 1 / 2 / 2;
     padding-left: 20px;
     width: 100px;
+    z-index: 1;
+    background-color: $white;
+  }
+  &_logo_dark {
+    grid-area: 1 / 1 / 2 / 2;
+    padding-left: 20px;
+    width: 100px;
+    z-index: 0;
+    background-color: $dark-mode;
   }
 }
 
