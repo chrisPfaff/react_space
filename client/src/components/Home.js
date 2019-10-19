@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loading from "./Loading.js";
 import axios from "axios";
 import "../styles/Home.scss";
 
@@ -12,24 +13,27 @@ function Home(props) {
   };
 
   useEffect(() => {
-    async function getData() {
+    const getData = async () => {
       await axios
         .get("http://localhost:8080/getimage")
         .then(function(response) {
-          console.log(response);
           fetchData(response.data.url, response.data.explanation);
         })
         .catch(function(error) {
           console.log(error);
         });
-    }
+    };
     getData();
   });
 
   return (
     <div className="Home">
       <div className="Home_body">
-        <img className="Home_image" src={image} alt="nasa space" />
+        {image ? (
+          <img className="Home_image" src={image} alt="nasa space" />
+        ) : (
+          <Loading />
+        )}
       </div>
       <h2 className="Home_heading">Description</h2>
       <p className="Home_explanation">{explanation}</p>

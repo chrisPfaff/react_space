@@ -13,16 +13,12 @@ function App() {
     <Router>
       <div className="App">
         <header className="App_header">
-          <img
-            className="App_logo_light"
-            src="logo.png"
-            alt="main header image"
-          />
-          <img
-            className="App_logo_dark"
-            src="logoDark.png"
-            alt="main header image"
-          />
+          <Link className="App_logo_light" to="/">
+            <img className="logo" src="logo.png" alt="main header image" />
+          </Link>
+          <Link className="App_logo_dark" to="/">
+            <img className="logo" src="logoDark.png" alt="main header image" />
+          </Link>
           <div className="App_nav">
             <li>
               <Link to="/">Home</Link>
