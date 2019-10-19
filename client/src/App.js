@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./components/Home.js";
 import Epic from "./components/Epic.js";
 import Notfound from "./components/Notfound.js";
+import Darkmode from "./components/Darkmode.js";
 
 import "./styles/App.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -12,12 +13,15 @@ function App() {
       <div className="App">
         <header className="App_header">
           <img className="App_logo" src="logo.png" alt="main header image" />
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/epic">E.P.I.C</Link>
-          </li>
+          <div className="App_nav">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/epic">E.P.I.C</Link>
+            </li>
+            <Darkmode />
+          </div>
         </header>
         <Switch>
           <Route exact path="/">
