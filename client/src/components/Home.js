@@ -28,6 +28,7 @@ function Home(props) {
 
   return (
     <div className="Home">
+      <h1 className="Home_heading">Home</h1>
       <div className="Home_body">
         {image ? (
           <img className="Home_image" src={image} alt="nasa space" />

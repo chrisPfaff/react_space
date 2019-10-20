@@ -1,9 +1,8 @@
 import React from "react";
 import Home from "./components/Home.js";
-import Epic from "./components/Epic.js";
+import Search from "./components/Search.js";
 import Notfound from "./components/Notfound.js";
 import Darkmode from "./components/Darkmode.js";
-import Loading from "./components/Loading.js";
 
 import "./styles/App.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -24,7 +23,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/epic">E.P.I.C</Link>
+              <Link to="/search">Search</Link>
             </li>
             <Darkmode />
           </div>
@@ -33,8 +32,8 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/epic">
-            <Epic />
+          <Route exact path="/search">
+            <Search />
           </Route>
           <Route path="*">
             <Notfound />
