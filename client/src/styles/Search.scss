@@ -1,0 +1,44 @@
+@import "src/styles/variables.scss";
+
+.Search {
+  font-family: $text_font;
+  font-size: 18px;
+
+  &_container {
+  }
+  &_heading {
+    font-family: $heading_font;
+  }
+
+  &_box {
+    width: 100px;
+  }
+
+  &_form {
+  }
+  &_form > label > input {
+    margin-left: 10px;
+  }
+}
+
+input[type="search"] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="search"]:focus {
+  width: 20%;
+}
+
+input[type="submit"] {
+  background-color: $primary-color;
+  border: none;
+  color: white;
+  padding: 2px 4px;
+  font-family: $text_font;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
