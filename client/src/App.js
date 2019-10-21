@@ -25,6 +25,15 @@ function App() {
             <li>
               <Link to="/search">Search</Link>
             </li>
+            <li>
+              <Link to="/search">Butt</Link>
+            </li>
+            <li>
+              <Link to="/search">Fart</Link>
+            </li>
+            <li>
+              <Link to="/search">Fart</Link>
+            </li>
             <Darkmode />
           </div>
         </header>
