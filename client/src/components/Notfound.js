@@ -13,7 +13,7 @@ function NotFound(props) {
         No match for <code>{location.pathname}</code>
       </h2>
       <img className="notFound_image" src="404.png" alt="page not found" />
-      <p className="notFound_explanation">Its Lonely Out Here</p>
+      <p className="notFound_explanation hover">Its Lonely Out Here</p>
       <button className="notFound_button">
         <Link className="notFound_button_text" to="/">
           <li>Home</li>

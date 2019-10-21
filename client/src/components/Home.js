@@ -6,10 +6,12 @@ import "../styles/Home.scss";
 function Home(props) {
   const [image, getImage] = useState(null);
   const [explanation, getExplanation] = useState(null);
+  const [title, getTitle] = useState(null);
 
-  const fetchData = (img, description) => {
+  const fetchData = (img, description, title) => {
     getImage(img);
     getExplanation(description);
+    getTitle(title);
   };
 
   useEffect(() => {
@@ -17,7 +19,12 @@ function Home(props) {
       await axios
         .get("http://localhost:8080/getimage")
         .then(function(response) {
-          fetchData(response.data.url, response.data.explanation);
+          console.log(response.data);
+          fetchData(
+            response.data.url,
+            response.data.explanation,
+            response.data.title
+          );
         })
         .catch(function(error) {
           console.log(error);
@@ -28,15 +35,17 @@ function Home(props) {
 
   return (
     <div className="Home">
-      <h1 className="Home_heading">Home</h1>
+      <h1 className="Home_heading hover">Home</h1>
       <div className="Home_body">
         {image ? (
           <img className="Home_image" src={image} alt="nasa space" />
         ) : (
           <Loading />
         )}
+        <div className="Home_title">
+          <h2 className="Home_heading">{title}</h2>
+        </div>
       </div>
-      <h2 className="Home_heading">Description</h2>
       <p className="Home_explanation">{explanation}</p>
     </div>
   );
