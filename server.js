@@ -29,10 +29,8 @@ app.get("/getimage", (req, res) => {
 
 app.get("/search", (req, res) => {
   const apiKey = process.env.API_KEY;
-  console.log(req.query.data);
-  // let query = req.query.data.replace(" ", "+");
-  //console.log(query);
-  axios.get(`https://images-api.nasa.gov/search?q=moon`).then(response => {
+  let query = req.query.data.replace(" ", "+");
+  axios.get(`https://images-api.nasa.gov/search?q=${query}`).then(response => {
     res.send(response.data.collection);
   });
 });
