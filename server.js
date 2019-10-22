@@ -27,17 +27,14 @@ app.get("/getimage", (req, res) => {
     });
 });
 
-app.post("/search", (req, res) => {
+app.get("/search", (req, res) => {
   const apiKey = process.env.API_KEY;
-  console.log(req.query);
-  res.end();
-  // axios
-  //   .get(
-  //     `https://api.nasa.gov/EPIC/api/natural/date/08-10-2017?api_key=${apiKey}`
-  //   )
-  //   .then(response => {
-  //     res.send(response.data);
-  //   });
+  console.log(req.query.data);
+  // let query = req.query.data.replace(" ", "+");
+  //console.log(query);
+  axios.get(`https://images-api.nasa.gov/search?q=moon`).then(response => {
+    res.send(response.data.collection);
+  });
 });
 
 app.listen(process.env.PORT || port, () => {
