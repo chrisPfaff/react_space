@@ -26,13 +26,13 @@ function App() {
               <Link to="/search">Search</Link>
             </li>
             <li>
-              <Link to="/search">Butt</Link>
+              <Link to="/search">Search</Link>
             </li>
             <li>
-              <Link to="/search">Fart</Link>
+              <Link to="/search">Search</Link>
             </li>
             <li>
-              <Link to="/search">Fart</Link>
+              <Link to="/search">Search</Link>
             </li>
             <Darkmode />
           </div>

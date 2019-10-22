@@ -21,7 +21,6 @@ function Home(props) {
       await axios
         .get("http://localhost:8080/getimage")
         .then(function(response) {
-          console.log(response.data);
           fetchData(
             response.data.url,
             response.data.explanation,
