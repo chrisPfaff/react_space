@@ -11,22 +11,22 @@ function Search(props) {
   };
 
   const handleSubmit = e => {
+    e.preventDefault();
     const getData = async () => {
       await axios
-        .post("http://localhost:8080/search?data=haah:data2=asas")
+        .get(`http://localhost:8080/search?data=${searchData}`)
         .then(function(response) {
           console.log(response);
-          //  fetchData(response.data);
+          fetchData(response.data);
         })
         .catch(function(error) {
           console.log(error);
         });
     };
-    e.preventDefault();
     getData();
     setSearchData("");
   };
-
+  console.log("datatatat", dataArr);
   const handleChange = e => {
     setSearchData(e.target.value);
     console.log(searchData);
