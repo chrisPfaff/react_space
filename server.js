@@ -27,16 +27,17 @@ app.get("/getimage", (req, res) => {
     });
 });
 
-app.get("/getepic", (req, res) => {
+app.post("/search", (req, res) => {
   const apiKey = process.env.API_KEY;
-
-  axios
-    .get(
-      `https://api.nasa.gov/EPIC/api/natural/date/08-10-2017?api_key=${apiKey}`
-    )
-    .then(response => {
-      res.send(response.data);
-    });
+  console.log(req.query);
+  res.end();
+  // axios
+  //   .get(
+  //     `https://api.nasa.gov/EPIC/api/natural/date/08-10-2017?api_key=${apiKey}`
+  //   )
+  //   .then(response => {
+  //     res.send(response.data);
+  //   });
 });
 
 app.listen(process.env.PORT || port, () => {

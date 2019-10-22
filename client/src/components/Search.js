@@ -11,8 +11,19 @@ function Search(props) {
   };
 
   const handleSubmit = e => {
+    const getData = async () => {
+      await axios
+        .post("http://localhost:8080/search?data=haah:data2=asas")
+        .then(function(response) {
+          console.log(response);
+          //  fetchData(response.data);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    };
     e.preventDefault();
-    console.log("search", searchData);
+    getData();
     setSearchData("");
   };
 
@@ -20,20 +31,6 @@ function Search(props) {
     setSearchData(e.target.value);
     console.log(searchData);
   };
-  useEffect(() => {
-    const getData = () => {
-      // await axios
-      // .get("http://localhost:8080/getepic")
-      // .then(function(response) {
-      //   console.log(response);
-      //   fetchData(response.data);
-      // })
-      // .catch(function(error) {
-      //   console.log(error);
-      // });
-    };
-    // getData();
-  });
 
   return (
     <div className="Search">

@@ -33,6 +33,13 @@
     border-radius: 4px 4px 0px 0px;
     object-fit: cover;
   }
+
+  &_iframe {
+    height: 300px;
+    max-height: 330px;
+    width: 400px;
+    border-radius: 4px 4px 0px 0px;
+  }
   &_title {
     text-align: center;
     padding: 5px 10px;

@@ -4,14 +4,16 @@ import axios from "axios";
 import "../styles/Home.scss";
 
 function Home(props) {
-  const [image, getImage] = useState(null);
-  const [explanation, getExplanation] = useState(null);
-  const [title, getTitle] = useState(null);
+  const [image, setImage] = useState(null);
+  const [explanation, setExplanation] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [media, setMediaType] = useState("");
 
-  const fetchData = (img, description, title) => {
-    getImage(img);
-    getExplanation(description);
-    getTitle(title);
+  const fetchData = (img, description, title, media) => {
+    setImage(img);
+    setExplanation(description);
+    setTitle(title);
+    setMediaType(media);
   };
 
   useEffect(() => {
@@ -23,7 +25,8 @@ function Home(props) {
           fetchData(
             response.data.url,
             response.data.explanation,
-            response.data.title
+            response.data.title,
+            response.data.media_type
           );
         })
         .catch(function(error) {
@@ -33,15 +36,29 @@ function Home(props) {
     getData();
   });
 
+  const chooseDisplay = () => {
+    if (image === null) {
+      return <Loading />;
+    } else if (media === "video") {
+      return (
+        <iframe
+          className="Home_iframe"
+          src={image}
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay"
+        ></iframe>
+      );
+    } else {
+      return <img className="Home_image" src={image} alt="nasa space" />;
+    }
+  };
+
   return (
     <div className="Home">
       <h1 className="Home_heading hover">Home</h1>
       <div className="Home_body">
-        {image ? (
-          <img className="Home_image" src={image} alt="nasa space" />
-        ) : (
-          <Loading />
-        )}
+        {chooseDisplay()}
         <div className="Home_title">
           <h2 className="Home_heading">{title}</h2>
         </div>
