@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import SearchDataComponent from "./SearchData.js";
 import "../styles/Search.scss";
 
 function Search(props) {
@@ -26,10 +27,9 @@ function Search(props) {
     getData();
     setSearchData("");
   };
-  console.log("datatatat", dataArr);
+  //console.log("datatatat", dataArr);
   const handleChange = e => {
     setSearchData(e.target.value);
-    console.log(searchData);
   };
 
   return (
@@ -50,6 +50,7 @@ function Search(props) {
             <input type="submit" value="submit" />
           </label>
         </form>
+        <SearchDataComponent />
       </div>
     </div>
   );
