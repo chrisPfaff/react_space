@@ -5,7 +5,7 @@ const searchDataComponent = props => {
   return (
     <div className="container">
       <div className="container_title">
-        <h1>Title</h1>
+        <h1>{props.title}</h1>
       </div>
       <div className="container_body">
         <p>

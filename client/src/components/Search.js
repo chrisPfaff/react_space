@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchDataComponent from "./SearchData.js";
+import Loading from "./Loading.js";
 import "../styles/Search.scss";
 
 function Search(props) {
@@ -17,8 +18,8 @@ function Search(props) {
       await axios
         .get(`http://localhost:8080/search?data=${searchData}`)
         .then(function(response) {
-          console.log("response", response);
-          fetchData(response.data);
+          console.log("response", response.data.items);
+          fetchData(response.data.items);
         })
         .catch(function(error) {
           console.log(error);
@@ -30,6 +31,14 @@ function Search(props) {
 
   const handleChange = e => {
     setSearchData(e.target.value);
+  };
+
+  const generateComponents = () => {
+    const mappedData = dataArr.map(item => {
+      console.log(item);
+      return <SearchDataComponent href={item.href} data={item.data[0]} />;
+    });
+    return mappedData;
   };
 
   return (
@@ -50,8 +59,8 @@ function Search(props) {
             <input type="submit" value="submit" />
           </label>
         </form>
-        <SearchDataComponent />
       </div>
+      {generateComponents()}
     </div>
   );
 }
