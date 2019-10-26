@@ -18,7 +18,6 @@ function Search(props) {
       await axios
         .get(`http://localhost:8080/search?data=${searchData}`)
         .then(function(response) {
-          console.log("response", response.data.items);
           fetchData(response.data.items);
         })
         .catch(function(error) {
@@ -35,7 +34,6 @@ function Search(props) {
 
   const generateComponents = () => {
     const mappedData = dataArr.map(item => {
-      console.log(item);
       return <SearchDataComponent href={item.href} data={item.data[0]} />;
     });
     return mappedData;
@@ -45,7 +43,7 @@ function Search(props) {
     <div className="Search">
       <div className="Search_container">
         <h1 className="Search_heading hover">Search</h1>
-        <p>Use NASA's Search API</p>
+        <h2>Use NASA's Search API</h2>
         <form onSubmit={handleSubmit} className="Search_form">
           <label>
             Search
