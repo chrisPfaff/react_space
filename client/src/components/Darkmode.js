@@ -5,31 +5,34 @@ const Darkmode = props => {
   const [dark, setDark] = useState(false);
 
   const clickFunction = e => {
-    let body = document.querySelector("body");
-    let appHeader = document.querySelectorAll("a");
-    let darkModeText = document.getElementsByClassName(
+    const body = document.querySelector("body");
+    const links = document.querySelectorAll("a");
+    const darkModeText = document.getElementsByClassName(
       "DarkmodeContainer_name"
     );
-    let header = document.getElementsByClassName("App_header");
-    let logo = document.getElementsByClassName("App_logo_dark")[0];
+    const header = document.getElementsByClassName("App_header");
+    const logo = document.getElementsByClassName("App_logo_dark")[0];
+    const description = document.querySelector("h2");
 
     if (dark === false) {
       setDark(true);
-      appHeader.forEach(item => {
+      links.forEach(item => {
         item.classList.add("dark");
       });
       body.classList.add("dark");
       darkModeText[0].classList.add("dark");
       header[0].classList.add("dark");
+      description.classList.add("dark");
       logo.style.zIndex = 2;
     } else {
       setDark(false);
-      appHeader.forEach(item => {
+      links.forEach(item => {
         item.classList.remove("dark");
       });
       body.classList.remove("dark");
       darkModeText[0].classList.remove("dark");
       header[0].classList.remove("dark");
+      description.classList.remove("dark");
       logo.style.zIndex = 0;
     }
   };
