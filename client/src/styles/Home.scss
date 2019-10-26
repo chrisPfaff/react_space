@@ -8,12 +8,11 @@
   padding-top: 30px;
 
   &_body {
-    background: $white;
-    height: 400px;
+    height: auto;
     width: 400px;
     display: flex;
     flex-direction: column;
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 9px;
     -webkit-box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
     -moz-box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
     box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
@@ -21,6 +20,7 @@
 
   &_heading {
     font-family: $heading-font;
+    height: auto;
   }
   &_explanation {
     padding-top: 50px;
@@ -29,20 +29,20 @@
     font-size: 18px;
   }
   &_image {
-    max-height: 330px;
+    max-height: auto;
     width: 400px;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
     object-fit: cover;
   }
 
   &_iframe {
-    height: 300px;
-    max-height: 330px;
+    max-height: auto;
     width: 400px;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
   }
   &_title {
     text-align: center;
     padding: 5px 10px;
+    border-radius: 0px 0px 8px 8px;
   }
 }

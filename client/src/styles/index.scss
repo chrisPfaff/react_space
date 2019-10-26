@@ -5,6 +5,14 @@ code {
     monospace;
 }
 
+body {
+  background-color: #f5f5f5;
+}
+
+p {
+  line-height: 34px;
+}
+
 .dark {
   background-color: $dark-mode;
   color: $white !important;
