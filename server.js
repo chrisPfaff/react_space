@@ -30,9 +30,11 @@ app.get("/getimage", (req, res) => {
 app.get("/search", (req, res) => {
   const apiKey = process.env.API_KEY;
   let query = req.query.data.replace(" ", "+");
-  axios.get(`https://images-api.nasa.gov/search?q=${query}`).then(response => {
-    res.send(response.data.collection);
-  });
+  axios
+    .get(`https://images-api.nasa.gov/search?q=${query}&media_type=image`)
+    .then(response => {
+      res.send(response.data.collection);
+    });
 });
 
 app.listen(process.env.PORT || port, () => {
