@@ -10,10 +10,12 @@ function SearchDataComponent(props) {
 
   const chooseDisplay = () => {
     if (mediaType === null) {
+      // suspense?
       return <Loading />;
     } else if (mediaType === "video") {
       return (
         <iframe
+          className="container_iframe"
           src={media}
           frameborder="0"
           allowfullscreen
@@ -21,8 +23,11 @@ function SearchDataComponent(props) {
         ></iframe>
       );
     } else {
-      return <img src={media} alt="nasa space" />;
+      return <img className="container_image" src={media} alt="nasa space" />;
     }
+    // <Suspense fallback={<Loading />}>
+    //   this.chooseDisplay()
+    // </Suspense>
   };
 
   useEffect(() => {
@@ -42,12 +47,14 @@ function SearchDataComponent(props) {
 
   return (
     <div className="container">
-      <div className="container_title">
-        <h1>{props.data.title}</h1>
-      </div>
-      <div className="container_media">{chooseDisplay()}</div>
       <div className="container_body">
-        <p>{props.data.description}</p>
+        <div className="container_title">
+          <h1>{props.data.title}</h1>
+        </div>
+        <div>{chooseDisplay()}</div>
+        <div className="container_explanation">
+          <p>{props.data.description}</p>
+        </div>
       </div>
     </div>
   );
