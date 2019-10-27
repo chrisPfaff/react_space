@@ -45,7 +45,7 @@ function Search(props) {
         <h1 className="Search_heading hover">Search</h1>
         <h2>Use NASA's Search API</h2>
         <form onSubmit={handleSubmit} className="Search_form">
-          <label>
+          <label htmlFor="search">
             Search
             <input
               onChange={handleChange}

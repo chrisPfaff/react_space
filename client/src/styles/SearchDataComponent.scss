@@ -1,13 +1,44 @@
+@import "src/styles/variables.scss";
+
 .container {
-  border: 1px solid black;
   display: flex;
-  max-width: 80%;
+  max-width: 60%;
   margin: 0 auto;
+  align-items: center;
   flex-direction: column;
   max-height: 100px;
   overflow: hidden;
-  transition: all 1s ease;
+  transition: all 3s ease;
   margin-bottom: 40px;
+  border-radius: 9px;
+  -webkit-box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
+  box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
+  &_body {
+    border: 3px solid $text-color;
+  }
+  &_explanation {
+    padding-top: 20px;
+    width: auto;
+    font-family: $text-font;
+    font-size: 18px;
+  }
+  &_image {
+    width: 400px;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
+  }
+
+  &_iframe {
+    max-height: auto;
+    width: 400px;
+    border-radius: 8px 8px 0px 0px;
+  }
+  &_title {
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 0px 0px 8px 8px;
+  }
 }
 
 .container:hover {
