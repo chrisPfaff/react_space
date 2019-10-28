@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "./Loading.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import "../styles/SearchDataComponent.scss";
 
 function SearchDataComponent(props) {
@@ -50,6 +52,9 @@ function SearchDataComponent(props) {
       <div className="container_body">
         <div className="container_title">
           <h1>{props.data.title}</h1>
+          <span className="container_button">
+            <FontAwesomeIcon icon={faCaretDown} className="container_icon" />
+          </span>
         </div>
         <div>{chooseDisplay()}</div>
         <div className="container_explanation">

@@ -4,6 +4,7 @@
   display: flex;
   max-width: 60%;
   margin: 0 auto;
+  padding: 10px;
   align-items: center;
   flex-direction: column;
   max-height: 100px;
@@ -15,7 +16,18 @@
   -moz-box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
   box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
   &_body {
-    border: 3px solid $text-color;
+  }
+
+  &_icon {
+    font-size: 50px;
+  }
+
+  &_button {
+    cursor: pointer;
+  }
+
+  &_icon:hover {
+    cursor: pointer;
   }
   &_explanation {
     padding-top: 20px;
@@ -24,8 +36,7 @@
     font-size: 18px;
   }
   &_image {
-    width: 400px;
-    border-radius: 8px 8px 0px 0px;
+    width: 500px;
     object-fit: cover;
   }
 
@@ -35,6 +46,11 @@
     border-radius: 8px 8px 0px 0px;
   }
   &_title {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
     text-align: center;
     padding: 5px 10px;
     border-radius: 0px 0px 8px 8px;
