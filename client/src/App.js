@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./components/Home.js";
 import Search from "./components/Search.js";
 import Notfound from "./components/Notfound.js";
+import Eonet from "./components/Eonet.js";
 import Darkmode from "./components/Darkmode.js";
 
 import "./styles/App.scss";
@@ -26,7 +27,7 @@ function App() {
               <Link to="/search">Search</Link>
             </li>
             <li>
-              <Link to="/search">Search</Link>
+              <Link to="/eonet">Eonet</Link>
             </li>
             <li>
               <Link to="/search">Search</Link>
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route exact path="/search">
             <Search />
+          </Route>
+          <Route exact path="/eonet">
+            <Eonet />
           </Route>
           <Route path="*">
             <Notfound />
