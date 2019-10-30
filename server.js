@@ -37,6 +37,16 @@ app.get("/search", (req, res) => {
     });
 });
 
+app.get("/eonet", (req, res) => {
+  axios
+    .get(
+      `https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?limit=5&days=20&source=InciWeb&status=open`
+    )
+    .then(response => {
+      res.send(response.data);
+    });
+});
+
 app.listen(process.env.PORT || port, () => {
   console.log(`app is listening on port ${port}`);
 });
