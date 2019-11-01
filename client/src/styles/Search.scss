@@ -21,6 +21,26 @@
   &_form > label > input {
     margin-left: 10px;
   }
+  &_button {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    background-color: white;
+    border-color: $black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: $black;
+    font-family: $text-font;
+    font-size: 12px;
+    font-family: $text_font;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  &_button:hover {
+    color: white;
+    background-color: black;
+  }
 }
 
 input[type="search"] {
@@ -31,16 +51,4 @@ input[type="search"] {
 
 input[type="search"]:focus {
   width: 20%;
-}
-
-input[type="submit"] {
-  background-color: $primary-color;
-  border: none;
-  color: white;
-  padding: 2px 4px;
-  font-family: $text_font;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
 }
