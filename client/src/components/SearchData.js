@@ -45,7 +45,7 @@ function SearchDataComponent(props) {
         });
     };
     getMedia();
-  });
+  }, []);
 
   return (
     <div className="container">
