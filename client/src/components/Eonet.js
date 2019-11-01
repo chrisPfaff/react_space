@@ -9,7 +9,7 @@ function Eonet(props) {
 
   const getEonetData = async () => {
     await axios
-      .get("http://localhost:8080/eonet")
+      .get(`http://localhost:8080/eonet?data=${eonetIdNumber}`)
       .then(function(response) {
         setData(response.data.events);
       })
@@ -20,17 +20,16 @@ function Eonet(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target);
-    setDataIdNumber(e.target.value);
     getEonetData();
   };
 
   const handleChange = e => {
     e.preventDefault();
+    setDataIdNumber(e.target.value);
   };
 
   console.log(eonetData);
-  console.log(eonetIdNumber);
+
   return (
     <div className="eonet">
       <h1 className="eonet_title hover">Eonet</h1>
@@ -57,7 +56,7 @@ function Eonet(props) {
             <option value="13">Water Color</option>
             <option value="8">Wildfires</option>
           </select>
-          <input type="submit" value="Submit" />
+          <input className="eonet_button" type="submit" value="Submit" />
         </form>
       </div>
     </div>

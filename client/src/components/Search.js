@@ -54,7 +54,7 @@ function Search(props) {
               id="search"
               placeholder={searchData}
             />
-            <input type="submit" value="submit" />
+            <input class="Search_button" type="submit" value="submit" />
           </label>
         </form>
       </div>
