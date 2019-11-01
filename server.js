@@ -38,11 +38,14 @@ app.get("/search", (req, res) => {
 });
 
 app.get("/eonet", (req, res) => {
+  const query = req.query.data;
+  console.log(query);
   axios
     .get(
-      `https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?limit=5&days=20&source=InciWeb&status=open`
+      `https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/${query}?limit=10`
     )
     .then(response => {
+      console.log(response.data);
       res.send(response.data);
     });
 });
