@@ -18,7 +18,8 @@ function Search(props) {
       await axios
         .get(`http://localhost:8080/search?data=${searchData}`)
         .then(function(response) {
-          fetchData(response.data.items);
+          console.log("response data items", response);
+          fetchData(response.data);
         })
         .catch(function(error) {
           console.log(error);
