@@ -32,6 +32,19 @@ function SearchDataComponent(props) {
     // </Suspense>
   };
 
+  const handleClick = e => {
+    e.preventDefault();
+    const parentTarget = e.currentTarget.parentNode;
+    let parentTarget2 = parentTarget.parentNode;
+    let classCheck = parentTarget2.parentNode;
+    if (classCheck.classList.contains("active")) {
+      classCheck.classList.remove("active");
+    } else {
+      console.log(classCheck);
+      classCheck.classList.add("active");
+    }
+  };
+
   useEffect(() => {
     const getMedia = async () => {
       await axios
@@ -50,11 +63,18 @@ function SearchDataComponent(props) {
   return (
     <div className="container">
       <div className="container_body">
-        <div className="container_title">
+        <div className={`container_title`}>
           <h1>{props.data.title}</h1>
-          <span className="container_button">
+          <FontAwesomeIcon
+            onClick={handleClick}
+            className="container_button"
+            icon={faCaretDown}
+            className="container_icon"
+          />
+
+          {/* <span onClick={handleClick} className="container_button">
             <FontAwesomeIcon icon={faCaretDown} className="container_icon" />
-          </span>
+          </span> */}
         </div>
         <div>{chooseDisplay()}</div>
         <div className="container_explanation">

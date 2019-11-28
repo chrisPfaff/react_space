@@ -16,6 +16,7 @@
   -moz-box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
   box-shadow: 2px 10px 32px 0px rgba(0, 0, 0, 0.85);
   &_body {
+    position: relative;
   }
 
   &_icon {
@@ -23,7 +24,7 @@
   }
 
   &_button {
-    cursor: pointer;
+    margin-left: 10px;
   }
 
   &_icon:hover {
@@ -52,11 +53,16 @@
     justify-content: space-evenly;
     flex-direction: row;
     text-align: center;
+    width: 100%;
     padding: 5px 10px;
     border-radius: 0px 0px 8px 8px;
   }
 }
 
-.container:hover {
+.active {
   max-height: 1000px;
 }
+
+// .container:hover {
+//   max-height: 1000px;
+// }

@@ -43,7 +43,7 @@ function Search(props) {
   return (
     <div className="Search">
       <div className="Search_container">
-        <h1 className="Search_heading hover">Search</h1>
+        <h1 className="Search_heading hover">Search Images</h1>
         <h2>Use NASA's Search API</h2>
         <form onSubmit={handleSubmit} className="Search_form">
           <label htmlFor="search">

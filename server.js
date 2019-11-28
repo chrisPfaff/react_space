@@ -31,7 +31,7 @@ app.get("/search", (req, res) => {
   axios
     .get(`https://images-api.nasa.gov/search?q=${query}&media_type=image`)
     .then(response => {
-      let data = response.data.collection.items.slice(0, 10);
+      let data = response.data.collection.items.slice(0, 5);
       res.send(data);
     });
 });
