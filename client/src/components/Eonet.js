@@ -11,6 +11,7 @@ function Eonet(props) {
     await axios
       .get(`http://localhost:8080/eonet?data=${eonetIdNumber}`)
       .then(function(response) {
+        console.log("responseeee", response.data);
         setData(response.data.events);
       })
       .catch(function(error) {

@@ -6,11 +6,11 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import "../styles/SearchDataComponent.scss";
 
 function SearchDataComponent(props) {
-  console.log(props);
   const [media, setMedia] = useState("");
   const mediaType = props.data.media_type;
 
   const chooseDisplay = () => {
+    console.log("choose display is working");
     if (mediaType === null) {
       // suspense?
       return <Loading />;
@@ -37,7 +37,7 @@ function SearchDataComponent(props) {
       await axios
         .get(props.href)
         .then(function(response) {
-          console.log(response.data[0]);
+          console.log("set media response", response.data[0]);
           setMedia(response.data[0]);
         })
         .catch(function(error) {
@@ -45,7 +45,7 @@ function SearchDataComponent(props) {
         });
     };
     getMedia();
-  }, []);
+  });
 
   return (
     <div className="container">
