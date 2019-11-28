@@ -19,7 +19,6 @@ app.get("/", function(req, res) {
 
 app.get("/getimage", (req, res) => {
   const apiKey = process.env.API_KEY;
-
   axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
     .then(response => {
@@ -28,26 +27,24 @@ app.get("/getimage", (req, res) => {
 });
 
 app.get("/search", (req, res) => {
-  const apiKey = process.env.API_KEY;
   let query = req.query.data.replace(" ", "+");
   axios
-    .get(
-      `https://images-api.nasa.gov/search?q=${query}?limit=10&media_type=image`
-    )
+    .get(`https://images-api.nasa.gov/search?q=${query}&media_type=image`)
     .then(response => {
-      res.send(response.data.collection);
+      let data = response.data.collection.items.slice(0, 10);
+      res.send(data);
     });
 });
 
 app.get("/eonet", (req, res) => {
   const query = req.query.data;
-  console.log(query);
+  //console.log(query);
   axios
     .get(
       `https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/${query}?limit=10`
     )
     .then(response => {
-      console.log(response.data);
+      //console.log(response.data); limit may not work
       res.send(response.data);
     });
 });
