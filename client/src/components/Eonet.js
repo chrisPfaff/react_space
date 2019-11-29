@@ -1,22 +1,33 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Loading from "./Loading.js";
 
 import "../styles/Eonet.scss";
 
 function Eonet(props) {
   const [eonetData, setData] = useState([]);
-  const [eonetIdNumber, setDataIdNumber] = useState(null);
+  const [eonetIdNumber, setDataIdNumber] = useState(6);
 
   const getEonetData = async () => {
     await axios
       .get(`http://localhost:8080/eonet?data=${eonetIdNumber}`)
       .then(function(response) {
-        console.log("responseeee", response.data);
-        setData(response.data.events);
+        console.log(response.data);
+        setData(response.data);
       })
       .catch(function(error) {
         console.log(error);
       });
+  };
+
+  const chooseDisplay = () => {
+    console.log(eonetData.title);
+    return (
+      <div>
+        <h1>{eonetData.title}</h1>
+        <p>{eonetData.description}</p>
+      </div>
+    );
   };
 
   const handleSubmit = e => {
@@ -29,12 +40,10 @@ function Eonet(props) {
     setDataIdNumber(e.target.value);
   };
 
-  console.log(eonetData);
-
   return (
     <div className="eonet">
       <h1 className="eonet_title hover">Eonet</h1>
-      <h2 className="eonet_title hover">
+      <h2 className="eonet_title">
         Earth Observatory Natural Event Tracker (EONET)
       </h2>
       <div className="eonet_body">
@@ -60,6 +69,7 @@ function Eonet(props) {
           <input className="eonet_button" type="submit" value="Submit" />
         </form>
       </div>
+      <div>{chooseDisplay()}</div>
     </div>
   );
 }

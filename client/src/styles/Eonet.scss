@@ -4,6 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 30px;
+  font-size: 18px;
+
   &_title {
     font-family: $heading-font;
   }
