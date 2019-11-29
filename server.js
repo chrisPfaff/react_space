@@ -41,7 +41,7 @@ app.get("/eonet", (req, res) => {
   //console.log(query);
   axios
     .get(
-      `https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/${query}?limit=10&days=30`
+      `https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/${query}?limit=8&status=closed`
     )
     .then(response => {
       //console.log(response.data); limit may not work

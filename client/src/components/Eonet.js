@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "./Loading.js";
+import EonetDataComponent from "./EonetData.js";
 
 import "../styles/Eonet.scss";
 
 function Eonet(props) {
   const [eonetData, setData] = useState([]);
   const [eonetIdNumber, setDataIdNumber] = useState(6);
+  const [eonetEvents, setEvent] = useState([]);
 
   const getEonetData = async () => {
     await axios
       .get(`http://localhost:8080/eonet?data=${eonetIdNumber}`)
       .then(function(response) {
-        console.log(response.data);
+        setEvent(response.data.events);
         setData(response.data);
       })
       .catch(function(error) {
@@ -21,13 +23,19 @@ function Eonet(props) {
   };
 
   const chooseDisplay = () => {
-    console.log(eonetData.title);
     return (
       <div>
         <h1>{eonetData.title}</h1>
         <p>{eonetData.description}</p>
       </div>
     );
+  };
+
+  const displayEvents = () => {
+    const mappedData = eonetEvents.map(item => {
+      return <EonetDataComponent data={item} />;
+    });
+    return mappedData;
   };
 
   const handleSubmit = e => {
@@ -46,6 +54,7 @@ function Eonet(props) {
       <h2 className="eonet_title">
         Earth Observatory Natural Event Tracker (EONET)
       </h2>
+      <h3>Past Natural Disaster Tracker</h3>
       <div className="eonet_body">
         <form onSubmit={handleSubmit}>
           <select
@@ -70,6 +79,7 @@ function Eonet(props) {
         </form>
       </div>
       <div>{chooseDisplay()}</div>
+      <div>{displayEvents()}</div>
     </div>
   );
 }
