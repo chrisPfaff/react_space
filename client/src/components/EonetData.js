@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "./Loading.js";
+import moment from "moment";
 import "../styles/Eonet.scss";
 
 function EonetDataComponent(props) {
+  console.log(props.data);
   useEffect(() => {
     const getMedia = async () => {
       // await axios
@@ -20,13 +22,23 @@ function EonetDataComponent(props) {
   });
 
   return (
-    <div className="container">
-      <div className="container_body">
-        <div className="container_title">
+    <div className="eonet_container">
+      <div className="eonet_container_body">
+        <div className="eonet_container_title">
           <h1>{props.data.title}</h1>
         </div>
-        <div className="container_explanation">
-          <p>{props.data.date}</p>
+        <div className="eonet_container_explanation">
+          <p>
+            Date Event Closed:
+            <span className="eonet_container_date">
+              {moment(props.data.closed)
+                .utc()
+                .format("MM/DD/YYYY")}
+            </span>
+          </p>
+          <div className="eonet_container_link">
+            <iframe src={props.data.sources[0].url} frameborder="0"></iframe>
+          </div>
           <p>{props.data.description}</p>
         </div>
       </div>

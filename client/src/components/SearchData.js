@@ -9,8 +9,9 @@ function SearchDataComponent(props) {
   const [media, setMedia] = useState("");
   const mediaType = props.data.media_type;
 
+  console.log("props data", props.data);
+
   const chooseDisplay = () => {
-    console.log("choose display is working");
     if (mediaType === null) {
       // suspense?
       return <Loading />;
@@ -40,7 +41,6 @@ function SearchDataComponent(props) {
     if (classCheck.classList.contains("active")) {
       classCheck.classList.remove("active");
     } else {
-      console.log(classCheck);
       classCheck.classList.add("active");
     }
   };
@@ -50,7 +50,6 @@ function SearchDataComponent(props) {
       await axios
         .get(props.href)
         .then(function(response) {
-          console.log("set media response", response.data[0]);
           setMedia(response.data[0]);
         })
         .catch(function(error) {
@@ -63,7 +62,7 @@ function SearchDataComponent(props) {
   return (
     <div className="container">
       <div className="container_body">
-        <div className={`container_title`}>
+        <div className="container_title">
           <h1>{props.data.title}</h1>
           <FontAwesomeIcon
             onClick={handleClick}
