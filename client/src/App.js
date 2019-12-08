@@ -29,12 +29,6 @@ function App() {
             <li>
               <Link to="/eonet">Eonet</Link>
             </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
             <Darkmode />
           </div>
         </header>
