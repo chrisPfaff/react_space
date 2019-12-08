@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "./Loading.js";
 import moment from "moment";
-import "../styles/Eonet.scss";
+import "../styles/EonetData.scss";
 
 function EonetDataComponent(props) {
   console.log(props.data);
@@ -36,8 +36,13 @@ function EonetDataComponent(props) {
                 .format("MM/DD/YYYY")}
             </span>
           </p>
-          <div className="eonet_container_link">
-            <iframe src={props.data.sources[0].url} frameborder="0"></iframe>
+          <div>
+            <iframe
+              className="eonet_container_link"
+              allowfullscreen="yes"
+              src={props.data.sources[0].url}
+              frameborder="0"
+            ></iframe>
           </div>
           <p>{props.data.description}</p>
         </div>

@@ -6,9 +6,10 @@
   align-items: center;
   padding-top: 30px;
   font-size: 18px;
+  font-family: $text-font;
 
   &_title {
-    font-family: $heading-font;
+    font-family: $text-font;
   }
   &_button {
     transition-duration: 0.4s;
