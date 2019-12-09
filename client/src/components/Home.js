@@ -19,7 +19,7 @@ function Home(props) {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get("http://localhost:8080/getimage")
+        .get("/getimage")
         .then(function(response) {
           fetchData(
             response.data.url,
