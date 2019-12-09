@@ -3,8 +3,6 @@ const path = require("path");
 const bodyParser = require("body-parser");
 var cors = require("cors");
 
-//concurrently command  // "start": "concurrently --kill-others \"npm run client\" \"npm run server\"",
-
 const app = express();
 app.use(cors());
 
@@ -16,7 +14,7 @@ require("dotenv").config();
 app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("/", function(req, res) {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.resolve("client", "build", "index.html"));
 });
 
 app.get("/getimage", (req, res) => {
