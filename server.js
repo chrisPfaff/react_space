@@ -3,6 +3,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 var cors = require("cors");
 
+//concurrently command  // "start": "concurrently --kill-others \"npm run client\" \"npm run server\"",
+
 const app = express();
 app.use(cors());
 
