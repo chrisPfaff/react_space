@@ -20,9 +20,12 @@ app.get("/", function(req, res) {
 });
 
 app.get("/getimage", (req, res) => {
-  const apiKey = process.env.API_KEY;
+  //const apiKey = process.env.API_KEY;
+  //hide api key
   axios
-    .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
+    .get(
+      `https://api.nasa.gov/planetary/apod?api_key=raP0qIkThJJqXBjcPypF4LNUhEnHUndMyyeYczup`
+    )
     .then(response => {
       res.send(response.data);
     });
