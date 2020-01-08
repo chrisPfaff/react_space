@@ -2,10 +2,19 @@
 
 .Landing {
   &_hero {
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
   }
 
   &_video {
-    height: 300px;
+    border-radius: 4px;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
   }
 }
