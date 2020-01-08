@@ -10,6 +10,15 @@ function Landing() {
           <source src="milkyway.mp4" type="video/mp4"></source>
         </video>
       </div>
+      <div className="Landing_content">
+        <p>
+          <span>This</span> App was created using NASA's free api. I also used
+          the React hooks API instead of classes and basic functional
+          components. The first <strong>Landing Page</strong> I used a basic
+          React component with some SASS styling to create a .MP4 video
+          background upon entering the app.
+        </p>
+      </div>
     </div>
   );
 }

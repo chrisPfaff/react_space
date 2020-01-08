@@ -9,12 +9,28 @@
     height: 90vh;
     position: relative;
     overflow: hidden;
+    height: 600px;
+  }
+
+  &_hero > h1 {
+    color: #fff;
+    font-size: 40px;
+    font-family: $heading-font;
+    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
+    letter-spacing: 16px;
   }
 
   &_video {
+    z-index: -1;
     border-radius: 4px;
     position: absolute;
     min-width: 100%;
     min-height: 100%;
+  }
+
+  &_content {
+    padding-top: 20px;
+    margin: 0 auto;
+    max-width: 80%;
   }
 }
