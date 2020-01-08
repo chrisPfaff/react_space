@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./components/Home.js";
+import Fact from "./components/NasaFact.js";
 import Search from "./components/Search.js";
 import Notfound from "./components/Notfound.js";
 import Eonet from "./components/Eonet.js";
@@ -7,6 +7,7 @@ import Darkmode from "./components/Darkmode.js";
 
 import "./styles/App.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import NasaFact from "./components/NasaFact.js";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
+              <Link to="/fact">Nasa Fact</Link>
+            </li>
+            <li>
               <Link to="/search">Search</Link>
             </li>
             <li>
@@ -34,7 +38,10 @@ function App() {
         </header>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <div>hello</div>
+          </Route>
+          <Route exact path="/fact">
+            <Fact />
           </Route>
           <Route exact path="/search">
             <Search />

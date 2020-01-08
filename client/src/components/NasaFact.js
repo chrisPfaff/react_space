@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading.js";
 import axios from "axios";
-import "../styles/Home.scss";
+import "../styles/NasaFact.scss";
 
-function Home(props) {
+function Fact(props) {
   const [image, setImage] = useState(null);
   const [explanation, setExplanation] = useState(null);
   const [title, setTitle] = useState(null);
@@ -67,4 +67,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default Fact;
