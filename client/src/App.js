@@ -1,5 +1,6 @@
 import React from "react";
 import Fact from "./components/NasaFact.js";
+import Landing from "./components/Landing.js";
 import Search from "./components/Search.js";
 import Notfound from "./components/Notfound.js";
 import Eonet from "./components/Eonet.js";
@@ -38,7 +39,7 @@ function App() {
         </header>
         <Switch>
           <Route exact path="/">
-            <div>hello</div>
+            <Landing />
           </Route>
           <Route exact path="/fact">
             <Fact />
