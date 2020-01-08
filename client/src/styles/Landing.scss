@@ -1,1 +1,11 @@
 @import "src/styles/variables.scss";
+
+.Landing {
+  &_hero {
+    height: 100%;
+  }
+
+  &_video {
+    height: 300px;
+  }
+}
