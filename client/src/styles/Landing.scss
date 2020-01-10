@@ -6,7 +6,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 90vh;
     position: relative;
     overflow: hidden;
     height: 600px;
@@ -28,9 +27,21 @@
     min-height: 100%;
   }
 
-  &_content {
-    padding-top: 20px;
-    margin: 0 auto;
-    max-width: 80%;
+  &_para_beginning {
+    font-size: 28px;
   }
+
+  &_content {
+    padding-top: 60px;
+    margin: 0 auto;
+    max-width: 70%;
+  }
+  &_content > p {
+    font-family: $text-font;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+.apod_link {
+  color: $secondary-color;
 }
