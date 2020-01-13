@@ -6,7 +6,7 @@ function Landing() {
     <div className="Landing">
       <div className="Landing_hero">
         <h1>React Space</h1>
-        <video className="Landing_video" autoPlay muted loop playsinline>
+        <video className="Landing_video" playsInline autoPlay muted loop>
           <source src="milkyway.mp4" type="video/mp4"></source>
         </video>
       </div>
