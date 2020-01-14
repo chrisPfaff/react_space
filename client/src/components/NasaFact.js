@@ -55,7 +55,9 @@ function Fact(props) {
 
   return (
     <div className="Home">
-      <h1 className="Home_heading hover"></h1>
+      <h1 className="Home_heading hover">
+        A.P.O.D (Astronomy Picture of The Day)
+      </h1>
       <div className="Home_body">
         {chooseDisplay()}
         <div className="Home_title">

@@ -19,8 +19,10 @@
   }
 
   &_heading {
+    color: $text-color;
     font-family: $heading-font;
-    height: auto;
+    margin-bottom: 40px;
+    font-size: 40px;
   }
   &_explanation {
     padding-top: 50px;

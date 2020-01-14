@@ -135,8 +135,9 @@ table {
     grid-template-rows: 80px;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    font-size: 20px;
     border-bottom: 3px solid $text-color;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   &_nav {
