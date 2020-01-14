@@ -11,10 +11,10 @@ function Landing() {
         </video>
       </div>
       <div className="Landing_content">
-        <p>
+        <h2>
           <span className="Landing_para_beginning">T</span>his App was created
           using NASA's free api.{" "}
-        </p>
+        </h2>
         <br />
         <p>
           <span className="Landing_para_beginning">I</span> used the React hooks

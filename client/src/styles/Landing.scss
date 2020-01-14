@@ -48,6 +48,10 @@
     font-size: 22px;
     line-height: 26px;
   }
+  &_content > h2 {
+    font-family: $text-font;
+    font-size: 22px;
+  }
 }
 .apod_link {
   color: $secondary-color;
