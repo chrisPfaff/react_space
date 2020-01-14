@@ -11,6 +11,10 @@
   &_title {
     font-family: $text-font;
   }
+
+  &_title_main {
+    font-family: $heading-font;
+  }
   &_button {
     transition-duration: 0.4s;
     border-radius: 4px;
