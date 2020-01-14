@@ -8,7 +8,6 @@ import Darkmode from "./components/Darkmode.js";
 
 import "./styles/App.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import NasaFact from "./components/NasaFact.js";
 
 function App() {
   return (
