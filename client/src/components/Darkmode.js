@@ -14,7 +14,6 @@ const Darkmode = props => {
     const header = document.getElementsByClassName("App_header");
     const logo = document.getElementsByClassName("App_logo_dark")[0];
     const description = document.querySelector("h2");
-    const title = document.querySelector("h1");
 
     if (dark === false) {
       setDark(true);
@@ -28,7 +27,6 @@ const Darkmode = props => {
       darkModeText[0].classList.add("dark");
       header[0].classList.add("dark");
       description.classList.add("dark");
-      title.classList.add("dark");
       logo.style.zIndex = 2;
     } else {
       setDark(false);

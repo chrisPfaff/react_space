@@ -50,7 +50,7 @@ function Eonet(props) {
 
   return (
     <div className="eonet">
-      <h1 className="eonet_title_main hover">Eonet</h1>
+      <h2 className="eonet_title_main hover">Eonet</h2>
       <h2 className="eonet_title">
         Earth Observatory Natural Event Tracker (EONET)
       </h2>
