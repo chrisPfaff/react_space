@@ -16,7 +16,7 @@ function Search(props) {
     e.preventDefault();
     const getData = async () => {
       await axios
-        .get(`api/search?data=${searchData}`)
+        .get(`/api/search?data=${searchData}`)
         .then(function (response) {
           console.log("response data items", response.data);
           fetchData(response.data);

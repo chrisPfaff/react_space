@@ -12,7 +12,7 @@ function Eonet(props) {
 
   const getEonetData = async () => {
     await axios
-      .get(`api/eonet?data=${eonetIdNumber}`)
+      .get(`/api/eonet?data=${eonetIdNumber}`)
       .then(function (response) {
         setEvent(response.data.events);
         setData(response.data);

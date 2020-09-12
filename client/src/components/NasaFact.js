@@ -19,7 +19,7 @@ function Fact(props) {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get("api/getImage")
+        .get("/api/getImage")
         .then(function (response) {
           fetchData(
             response.data.url,
