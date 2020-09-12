@@ -19,7 +19,7 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
 
-app.get("api/getimage", (req, res) => {
+app.get("/api/getimage", (req, res) => {
   //const apiKey = process.env.API_KEY;
   //hide api key
   axios
@@ -31,7 +31,7 @@ app.get("api/getimage", (req, res) => {
     });
 });
 
-app.get("api/search", (req, res) => {
+app.get("/api/search", (req, res) => {
   console.log("query", req.query.data);
   let query = req.query.data.replace(" ", "+");
   axios
@@ -42,7 +42,7 @@ app.get("api/search", (req, res) => {
     });
 });
 
-app.get("api/eonet", (req, res) => {
+app.get("/api/eonet", (req, res) => {
   const query = req.query.data;
   //console.log(query);
   axios
