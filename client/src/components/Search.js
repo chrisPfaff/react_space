@@ -8,20 +8,20 @@ function Search(props) {
   const [dataArr, setData] = useState([]);
   const [searchData, setSearchData] = useState("");
 
-  const fetchData = data => {
+  const fetchData = (data) => {
     setData(data);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const getData = async () => {
       await axios
-        .get(`/search?data=${searchData}`)
-        .then(function(response) {
+        .get(`api/search?data=${searchData}`)
+        .then(function (response) {
           console.log("response data items", response.data);
           fetchData(response.data);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     };
@@ -29,12 +29,12 @@ function Search(props) {
     setSearchData("");
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSearchData(e.target.value);
   };
 
   const generateComponents = () => {
-    const mappedData = dataArr.map(item => {
+    const mappedData = dataArr.map((item) => {
       return <SearchDataComponent href={item.href} data={item.data[0]} />;
     });
     return mappedData;

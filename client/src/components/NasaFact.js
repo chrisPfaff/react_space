@@ -19,8 +19,8 @@ function Fact(props) {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get("/getImage")
-        .then(function(response) {
+        .get("api/getImage")
+        .then(function (response) {
           fetchData(
             response.data.url,
             response.data.explanation,
@@ -28,7 +28,7 @@ function Fact(props) {
             response.data.media_type
           );
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     };

@@ -12,12 +12,12 @@ function Eonet(props) {
 
   const getEonetData = async () => {
     await axios
-      .get(`/eonet?data=${eonetIdNumber}`)
-      .then(function(response) {
+      .get(`api/eonet?data=${eonetIdNumber}`)
+      .then(function (response) {
         setEvent(response.data.events);
         setData(response.data);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   };
@@ -32,18 +32,18 @@ function Eonet(props) {
   };
 
   const displayEvents = () => {
-    const mappedData = eonetEvents.map(item => {
+    const mappedData = eonetEvents.map((item) => {
       return <EonetDataComponent data={item} />;
     });
     return mappedData;
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     getEonetData();
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     e.preventDefault();
     setDataIdNumber(e.target.value);
   };
