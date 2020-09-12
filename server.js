@@ -15,7 +15,7 @@ require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "./build")));
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
 
@@ -26,16 +26,17 @@ app.get("/getimage", (req, res) => {
     .get(
       `https://api.nasa.gov/planetary/apod?api_key=raP0qIkThJJqXBjcPypF4LNUhEnHUndMyyeYczup`
     )
-    .then(response => {
+    .then((response) => {
       res.send(response.data);
     });
 });
 
 app.get("/search", (req, res) => {
+  console.log("query", req.query.data);
   let query = req.query.data.replace(" ", "+");
   axios
     .get(`https://images-api.nasa.gov/search?q=${query}&media_type=image`)
-    .then(response => {
+    .then((response) => {
       let data = response.data.collection.items.slice(0, 10);
       res.send(data);
     });
@@ -48,7 +49,7 @@ app.get("/eonet", (req, res) => {
     .get(
       `https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/${query}?limit=8&status=closed`
     )
-    .then(response => {
+    .then((response) => {
       //console.log(response.data); limit may not work
       res.send(response.data);
     });
